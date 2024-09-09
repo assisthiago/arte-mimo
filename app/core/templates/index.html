@@ -1,288 +1,188 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Libs CSS -->
-    <link rel="stylesheet" href="{% static 'css/libs.bundle.css' %}å">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="{% static 'css/theme.bundle.css' %}">
+  <!-- Libs CSS -->
+  <link rel="stylesheet" href="{% static 'css/libs.bundle.css' %}">
 
-    <!-- Title -->
-    <title>Artesanato com MIMO</title>
-  </head>
-  <body class="bg-light">
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="{% static 'css/theme.bundle.css' %}">
 
-    <!-- WELCOME -->
-    <section class="pt-8 pt-md-12 pb-12 pb-md-15">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-8 text-center">
+  <!-- Title -->
+  <title>Artesanato com MIMO</title>
+</head>
 
-            <!-- Headin -->
-            <h1 class="display-1 fw-bold">
-              Artesanato com MIMO
-            </h1>
+<body class="bg-light">
 
-            <!-- Text -->
-            <p class="lead text-secondary mb-4">
-              We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
-            </p>
+  <!-- WELCOME -->
+  <section class="pt-8 pt-md-12 pb-12 pb-md-15">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
 
-            <!-- Badges -->
-            <nav class="nav justify-content-center">
-              <a class="badge rounded-pill text-bg-secondary-subtle active me-1 mb-1" href="#" data-bs-toggle="pill" data-filter="*" data-bs-target="#portfolio">
-                <span class="h6 text-uppercase">Bonecos</span>
+          <!-- Headin -->
+          <h1 class="display-1 fw-bold">
+            Artesanato com MIMO
+          </h1>
+
+          <!-- Text -->
+          <p class="lead text-secondary mb-4">
+            We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
+          </p>
+
+          <!-- Badges -->
+          <nav class="nav justify-content-center">
+            <a class="badge rounded-pill text-bg-secondary-subtle active me-1 mb-1" href="#" data-bs-toggle="pill"
+              data-filter="*" data-bs-target="#portfolio">
+              <span class="h6 text-uppercase">Todos</span>
+            </a>
+            {% for filter in filters %}
+              <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
+                data-filter=".{{filter.slug}}" data-bs-target="#portfolio">
+                <span class="h6 text-uppercase">{{filter.name}}</span>
               </a>
-              <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill" data-filter=".product" data-bs-target="#portfolio">
-                <span class="h6 text-uppercase">Panos</span>
-              </a>
-              <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill" data-filter=".ux" data-bs-target="#portfolio">
-                <span class="h6 text-uppercase">Estojos</span>
-              </a>
-              <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill" data-filter=".resources" data-bs-target="#portfolio">
-                <span class="h6 text-uppercase">Outros</span>
-              </a>
-            </nav>
-
-          </div>
-        </div> <!-- / .row -->
-      </div> <!-- / .container -->
-    </section>
-
-    <!-- CONTENT -->
-    <section class="py-8 py-md-11 mt-n10 mt-md-n14">
-      <div class="container">
-        <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
-          <div class="col-12 col-md-4 product">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Branding</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Curology Campaign</h4>
-
-              </div>
-
+            {% endfor %}
+            {% comment %}
+            <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
+              data-filter=".ux" data-bs-target="#portfolio">
+              <span class="h6 text-uppercase">UX</span>
             </a>
+            <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
+              data-filter=".resources" data-bs-target="#portfolio">
+              <span class="h6 text-uppercase">Resources</span>
+            </a> {% endcomment %}
+          </nav>
 
-          </div>
-          <div class="col-12 col-md-4 resources">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Packaging</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Honest Packaging</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 ux">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Branding</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Larq Bright Campaign</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 resources">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Ideation</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Doodle Pads</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 product">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Branding</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Larq Earthtones Collection</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 resources">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Product Design</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Goby Brush Prototype</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 product">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Product Design</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Larq Bottle Redesign</h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 ux">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Product Design</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Goby Packaging </h4>
-
-              </div>
-
-            </a>
-
-          </div>
-          <div class="col-12 col-md-4 ux">
-
-            <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
-
-              <!-- Image -->
-              <div class="card-zoom">
-                <img class="card-img-top rounded shadow-light-lg" src="https://images.unsplash.com/photo-1700062638751-cfd054759f02?q=80&w=2902&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="...">
-              </div>
-
-              <!-- Footer -->
-              <div class="card-footer">
-
-                <!-- Preheading -->
-                <h6 class="text-uppercase mb-1 text-body-secondary">Branding</h6>
-
-                <!-- Heading -->
-                <h4 class="mb-0">Trek Campaign</h4>
-
-              </div>
-
-            </a>
-
-          </div>
         </div>
+      </div> <!-- / .row -->
+    </div> <!-- / .container -->
+  </section>
+
+  <!-- CONTENT -->
+  <section class="py-8 py-md-11 mt-n10 mt-md-n14">
+    <div class="container">
+      <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
+        {% for product in products %}
+          <div class="col-12 col-md-4 {{product.type}}">
+
+            <!-- Card -->
+            <a class="card card-flush mb-7" href="#!">
+
+              <!-- Image -->
+              <div class="card-zoom">
+                <img class="card-img-top rounded shadow-light-lg" src="{{product.img}}" alt="...">
+              </div>
+
+              <!-- Footer -->
+              <div class="card-footer">
+
+                <!-- Preheading -->
+                <h6 class="text-uppercase mb-1 text-body-secondary">{{product.preheading}}</h6>
+
+                <!-- Heading -->
+                <h4 class="mb-0">{{product.name}}</h4>
+
+              </div>
+
+            </a>
+
+          </div>
+        {% endfor %}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- JAVASCRIPT -->
-    <!-- Vendor JS -->
-    <script src="{% static 'js/vendor.bundle.js' %}"></script>
+  <!-- SHAPE -->
+  <div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x text-gray-200">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor" />
+      </svg>
+    </div>
+  </div>
 
-    <!-- Theme JS -->
-    <script src="{% static 'js/theme.bundle.js' %}"></script>
+  <!-- FOOTER -->
+  <footer class="py-8 py-md-11 bg-gray-200">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 col-lg-3">
 
-  </body>
+          <!-- Brand -->
+          <h6 class="fw-bold text-uppercase text-gray-700">
+            Artesanato com MIMO
+          </h6>
+
+          <!-- Text -->
+          <p class="text-gray-700 mb-2">
+            Nossas redes sociais
+          </p>
+
+          <!-- Social -->
+          <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+            <li class="list-inline-item list-social-item me-3">
+              <a href="#!" class="text-decoration-none">
+                <img src="{% static 'img/instagram.svg' %}" class="list-social-icon" alt="...">
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3">
+              <a href="#!" class="text-decoration-none">
+                <img src="{% static 'img/facebook.svg' %}" class="list-social-icon" alt="...">
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3">
+              <a href="#!" class="text-decoration-none">
+                <img src="{% static 'img/twitter.svg' %}" class="list-social-icon" alt="...">
+              </a>
+            </li>
+            <li class="list-inline-item list-social-item">
+              <a href="#!" class="text-decoration-none">
+                <img src="{% static 'img/pinterest.svg' %}" class="list-social-icon" alt="...">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+
+          <!-- Heading -->
+          <h6 class="fw-bold text-uppercase text-gray-700">
+            Telefone
+          </h6>
+
+          <!-- List -->
+          <ul class="list-unstyled text-body-secondary mb-6 mb-md-8 mb-lg-0">
+            <li>
+              (21) 3339-1318
+            </li>
+            <li class="mb-3">
+              (21) 99664-3040
+            </li>
+          </ul>
+
+          <!-- Heading -->
+          <h6 class="fw-bold text-uppercase text-gray-700">
+            E-mail
+          </h6>
+
+          <!-- List -->
+          <ul class="list-unstyled text-body-secondary mb-6 mb-md-8 mb-lg-0">
+            <li>
+              artemimo@gmail.com
+            </li>
+          </ul>
+
+        </div>
+      </div> <!-- / .container -->
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <!-- Theme JS -->
+  <script src="{% static 'js/theme.bundle.js' %}"></script>
+
+</body>
+
 </html>
