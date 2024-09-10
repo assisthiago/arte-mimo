@@ -19,42 +19,33 @@
 <body class="bg-light">
 
   <!-- WELCOME -->
-  <section class="pt-8 pt-md-12 pb-12 pb-md-15">
+  <section data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax" style="margin-top: -87px; background-image: url({{background}});">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8 text-center">
+        <div class="col-12 col-md-10 col-lg-7 text-center">
 
           <!-- Headin -->
-          <h1 class="display-1 fw-bold">
-            Artesanato com MIMO
+          <h1 class="display-2 fw-bold text-white">
+              Artesanato com MIMO
           </h1>
 
           <!-- Text -->
-          <p class="lead text-secondary mb-4">
+          <p class="lead text-white text-opacity-75 mb-4">
             We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
           </p>
 
           <!-- Badges -->
           <nav class="nav justify-content-center">
-            <a class="badge rounded-pill text-bg-secondary-subtle active me-1 mb-1" href="#" data-bs-toggle="pill"
+            <a class="badge rounded-pill text-bg-white-subtle active me-1 mb-1" href="#" data-bs-toggle="pill"
               data-filter="*" data-bs-target="#portfolio">
               <span class="h6 text-uppercase">Todos</span>
             </a>
             {% for filter in filters %}
-              <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
+              <a class="badge rounded-pill text-bg-white-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
                 data-filter=".{{filter.slug}}" data-bs-target="#portfolio">
                 <span class="h6 text-uppercase">{{filter.name}}</span>
               </a>
             {% endfor %}
-            {% comment %}
-            <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
-              data-filter=".ux" data-bs-target="#portfolio">
-              <span class="h6 text-uppercase">UX</span>
-            </a>
-            <a class="badge rounded-pill text-bg-secondary-subtle me-1 mb-1" href="#" data-bs-toggle="pill"
-              data-filter=".resources" data-bs-target="#portfolio">
-              <span class="h6 text-uppercase">Resources</span>
-            </a> {% endcomment %}
           </nav>
 
         </div>
@@ -62,19 +53,27 @@
     </div> <!-- / .container -->
   </section>
 
+  <!-- SHAPE -->
+  <div class="position-relative">
+    <div class="shape shape-bottom shape-fluid-x text-light">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+  </div>
+
   <!-- CONTENT -->
   <section class="py-8 py-md-11 mt-n10 mt-md-n14">
     <div class="container">
-      <div class="row" id="portfolio" data-isotope='{"layoutMode": "fitRows"}'>
+      <div class="row" id="portfolio" data-isotope='{"layoutMode": "masonry"}'>
         {% for product in products %}
           <div class="col-12 col-md-4 {{product.type}}">
 
             <!-- Card -->
-            <a class="card card-flush mb-7" href="#!">
+            <div class="card card-flush mb-7">
 
               <!-- Image -->
               <div class="card-zoom">
+                <a data-bigpicture='{"imgSrc": "{{product.img}}"}' href="">
                 <img class="card-img-top rounded shadow-light-lg" src="{{product.img}}" alt="...">
+              </a>
               </div>
 
               <!-- Footer -->
@@ -88,7 +87,7 @@
 
               </div>
 
-            </a>
+            </div>
 
           </div>
         {% endfor %}
@@ -182,6 +181,9 @@
   <!-- JAVASCRIPT -->
   <!-- Theme JS -->
   <script src="{% static 'js/theme.bundle.js' %}"></script>
+
+  <!-- Vendor JS -->
+  <script src="{% static 'js/vendor.bundle.js' %}"></script>
 
 </body>
 
