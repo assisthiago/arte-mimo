@@ -4,7 +4,7 @@ from app.core.models import Background, Category, Product
 
 
 def index(request):
-    products = Product.objects.filter(active=True)
+    products = Product.objects.filter(active=True).prefetch_related("category")
     filters = Category.objects.all()
     background = Background.objects.filter(active=True).first()
 
