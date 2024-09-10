@@ -19,7 +19,7 @@
 <body class="bg-light">
 
   <!-- WELCOME -->
-  <section data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax" style="margin-top: -87px; background-image: url({{background}});">
+  <section data-jarallax data-speed=".8" class="pt-12 pt-md-14 pb-12 pb-md-15 overlay overlay-black overlay-60 bg-cover jarallax" style="margin-top: -87px; background-image: url({{background.photo.url}});">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-7 text-center">
@@ -64,15 +64,15 @@
     <div class="container">
       <div class="row" id="portfolio" data-isotope='{"layoutMode": "masonry"}'>
         {% for product in products %}
-          <div class="col-12 col-md-4 {{product.type}}">
+          <div class="col-12 col-md-4 {{product.category.slug}}">
 
             <!-- Card -->
             <div class="card card-flush mb-7">
 
               <!-- Image -->
               <div class="card-zoom">
-                <a data-bigpicture='{"imgSrc": "{{product.img}}"}' href="">
-                <img class="card-img-top rounded shadow-light-lg" src="{{product.img}}" alt="...">
+                <a data-bigpicture='{"imgSrc": "{{product.photo.url}}"}' href="">
+                <img class="card-img-top rounded shadow-light-lg" src="{{product.photo.url}}" alt="...">
               </a>
               </div>
 
@@ -97,7 +97,7 @@
 
   <!-- SHAPE -->
   <div class="position-relative">
-    <div class="shape shape-bottom shape-fluid-x text-gray-200">
+    <div class="shape shape-bottom shape-fluid-x text-gray-200" style="bottom:-1px;">
       <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor" />
       </svg>
