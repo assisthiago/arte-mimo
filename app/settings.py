@@ -36,8 +36,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.cache.UpdateCacheMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.cache.FetchFromCacheMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -70,6 +72,16 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 default_dburl = "sqlite:///" + str(BASE_DIR / "db.sqlite3")
 DATABASES = {"default": config("DATABASE_URL", default=default_dburl, cast=dburl)}
+
+
+# Cache
+# https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-CACHES
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    }
+}
 
 
 # Password validation
@@ -112,10 +124,12 @@ STATIC_ROOT = str(BASE_DIR / "staticfiles")
 MEDIA_URL = "media/"
 MEDIA_ROOT = str(BASE_DIR / "media")
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 
 # Django Debug Toolbar
 INTERNAL_IPS = [
