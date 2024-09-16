@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+import django_on_heroku
 from decouple import Csv, config
 from dj_database_url import parse as dburl
 
@@ -135,3 +136,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+# Heroku
+django_on_heroku.settings(locals())
