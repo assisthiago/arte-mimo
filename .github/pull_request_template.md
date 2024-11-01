@@ -1,11 +1,3 @@
----
-name: Nova funcionalidade/requisição
-about: Modelo de PR para novas funcionalidades/requisições.
-title: '[F0S0] TÍTULO - Descrição'
-labels: [melhoria]
-
----
-
 **ARGUSCSD-000** [link](https://jiracorp.petrobras.com.br/browse/ARGUSCSD-000)
  
 **Quais mudanças foram feitas?**
